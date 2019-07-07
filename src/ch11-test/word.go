@@ -28,7 +28,7 @@ func IsPalindrome(s string) bool {
 }
  */
 
-func IsPalindrome(s string) bool {
+func IsPalindrome_0(s string) bool {
 	var letters []rune
 	for _, r := range s {
 		if unicode.IsLetter(r){
@@ -37,6 +37,26 @@ func IsPalindrome(s string) bool {
 	}
 
 	for i := range letters {
+		if letters[i] != letters[len(letters)-1-i] {
+			return false
+		}
+	}
+	return true
+}
+
+func IsPalindrome(s string) bool {
+	// var letters []rune
+	// 快的程序往往是有很少的内存分配
+	letters := make([]rune, 0, len(s))
+	for _, r := range s {
+		if unicode.IsLetter(r){
+			letters = append(letters, unicode.ToLower(r))
+		}
+	}
+
+	n := len(letters)/2
+	for i := 0; i < n; i++ {
+	//for i := range letters {
 		if letters[i] != letters[len(letters)-1-i] {
 			return false
 		}
