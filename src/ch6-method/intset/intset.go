@@ -42,8 +42,9 @@ func (s *IntSet) Len() int {
 
 // Remove remove x from the set
 func (s *IntSet) Remove(x int) {
+	bit := uint(x%64)
 	for i, word := range s.words {
-		if x == int(word) {
+		if 1<<bit == word {
 			s.words[i] = 0  // Make it zero
 		}
 	}
