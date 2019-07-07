@@ -81,6 +81,7 @@ func randomNonPalindrome(rng *rand.Rand) string {
 	for i := 0; i < (n+1)/2; i++ {
 		r := rune(rng.Intn(0x1000))  // random rune up to '\u0999'
 		p := rune(rng.Intn(0x500))  // random rune up to '\u0999'
+		p := rune(rng.Intn(0x500))
 		runes[i] = r
 		runes[n-1-i] = p
 	}

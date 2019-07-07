@@ -61,7 +61,7 @@ func TestIsPalindrome(t *testing.T) {
 //}
 
 func TestRandomPalindrome(t *testing.T) {
-	//
+	// Initialize a pseudo-random number generator.
 	seed := time.Now().UTC().UnixNano()
 	t.Logf("Random seed: %d", seed)
 	rng := rand.New(rand.NewSource(seed))
@@ -76,7 +76,7 @@ func TestRandomPalindrome(t *testing.T) {
 
 /*
 func TestRandomNonPalindrome(t *testing.T) {
-	//
+	// Initialize a pseudo-random number generator.
 	seed := time.Now().UTC().UnixNano()
 	t.Logf("Random seed: %d", seed)
 	rng := rand.New(rand.NewSource(seed))
@@ -140,7 +140,6 @@ func BenchmarkIsPalindrome(b *testing.B) {
 
 
 // 示例函数
-
 func ExampleIsPalindrome() {
 	fmt.Println(IsPalindrome("A man, a plan, a canal: Panama"))
 	fmt.Println(IsPalindrome("IsPalindrome"))
